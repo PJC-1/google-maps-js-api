@@ -42,7 +42,8 @@
 
             addMarker({
               coords:{lat:37.871853,lng:-122.258423},
-              iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+              iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+              content:'<h1>Bizzerkeley</h1>'
             });
             addMarker({
               coords:{lat:37.7749,lng:-122.431297}
@@ -60,6 +61,17 @@
                 if(props.iconImage){
                     // set icon image
                     marker.setIcon(props.iconImage);
+                }
+
+                // Check content
+                if(props.content){
+                    var infoWindow = new google.maps.InfoWindow({
+                        content:props.content
+                    });
+
+                    marker.addListener('click', function(){
+                        infoWindow.open(map, marker);
+                    });
                 }
             }
         }
