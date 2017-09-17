@@ -40,14 +40,24 @@
             //     infoWindow.open(map, marker);
             // });
 
-            addMarker({
-              coords:{lat:37.871853,lng:-122.258423},
-              iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-              content:'<h1>Bizzerkeley</h1>'
-            });
-            addMarker({
-              coords:{lat:37.7749,lng:-122.431297}
-            });
+
+            // Array of markers
+            var markers = [
+              {
+                coords:{lat:37.871853,lng:-122.258423},
+                iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                content:'<h1>Bizzerkeley</h1>'
+              },
+              {
+                coords:{lat:37.7749,lng:-122.431297},
+                content:'<h1>San Francisco =)</h1>'
+              }
+            ];
+
+            // Loop through markers
+            for(var i = 0; i < markers.length; i++){
+                addMarker(markers[i]);
+            }
 
             // Add Marker Function
             function addMarker(props){
