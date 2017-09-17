@@ -16,14 +16,25 @@
     <div id="map"></div>
     <script>
         function initMap(){
+            // Map options
             var options = {
               zoom:8,
               center:{lat:37.7749,lng:-122.431297}
             }
+
+            // New map
             var map = new google.maps.Map(document.getElementById('map'), options);
+
+            // Add marker
+            var marker = new google.maps.Marker({
+                position:{lat:37.871853,lng:-122.258423},
+                map:map,
+                icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+            });
         }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjzKGtVgc67SA5L7qZ7-OgHDxmj_icecs&callback=initMap">
+    </script>
 </body>
 </html>
